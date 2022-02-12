@@ -6,26 +6,10 @@ import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import {temaCambio, traduccionIngles} from "../../actions/actionTheme.js"
 
 function Home() {
   const tema = useSelector((state) => state.temaClaro)
   const ingles = useSelector((state) => state.ingles)
-  const dispatch = useDispatch()
-  console.log(tema)
-
-  // const handleTema = (e) => {
-  //   e.preventDefault()
-  //   if (tema === true) {
-  //     dispatch(temaCambio(false))
-  //   } else {
-  //     dispatch(temaCambio(true))
-  //   }
-  // }
-
-  
-
-
 
   return (
     <section>

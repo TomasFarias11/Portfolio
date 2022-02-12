@@ -1,7 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {useDispatch, useSelector} from 'react-redux';
-import myImg from "../../Assets/avatar.svg";
+import {useSelector} from 'react-redux';
+// import myImg from "../../Assets/avatar.svg";
+import myImg from "../../Assets/IMG_5813.JPG"
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,

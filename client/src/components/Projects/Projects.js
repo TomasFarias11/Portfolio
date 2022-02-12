@@ -2,13 +2,12 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.jpeg";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+import food from "../../Assets/FOOD PI.png"
+import dog from "../..//Assets/DOG PI.png"
+import apple from "../../Assets/Apple ECOM.png"
+import piwoBeer from "../../Assets/PIWO Beer.jpg";
 
 function Projects() {
   const ingles = useSelector((state) => state.ingles)
@@ -25,7 +24,7 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={apple}
               isBlog={false}
               title={ingles ? 'E-Commerce Team Project - Apple' : "Proyecto Grupal E-Commerce - Apple"}
               description={ingles ? 'E-Commerce of Apple Products - Reseller. ' : "E-Commerce de venta de productos de Apple."}
@@ -36,17 +35,17 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={piwoBeer}
               isBlog={false}
               title={ingles ? 'E-Commerce Team Project - PIWO Beers' : "Proyecto Grupal E-Commerce - PIWO Cerveza"}
               description={ingles ? 'E-Commerce - Sale of Homemade Beers.' : "E-Commerce de venta de cervezas artesanales."}
-              link="https://github.com/soumyajit4419/Plant_AI"
+              link="https://github.com/LuisRocca/Pg-PIWO"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={dog}
               isBlog={false}
               title={ingles ? 'Individual Project - Henry Dogs' : "Proyecto Individual - Henry Dogs"}
               description={ingles ? 'Individual Project of Breed of Dogs and Their Temperaments.' : "Proyecto Individual de Razas de perros y sus temperamentos"}
@@ -56,34 +55,13 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={food}
               isBlog={false}
               title={ingles ? 'Individual Project - Henry Food' : "Proyecto Individual - Henry Food"}
               description={ingles ? 'Individual Project of Food Recipes and Their Type of Diets.' : "Proyecto Individual de Recetas de comidas y sus distintos tipos de dietas"}
-              link="https://github.com/soumyajit4419/Bits-0f-C0de"
+              link="https://github.com/TomasFarias11/PI---Henry-Food"
             />
           </Col>
-
-          {/* <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={suicide}
-              isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              link="https://github.com/soumyajit4419/AI_For_Social_Good"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={emotion}
-              isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              link="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-            />
-          </Col> */}
         </Row>
       </Container>
     </Container>
