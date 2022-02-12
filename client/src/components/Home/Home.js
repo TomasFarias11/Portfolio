@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {useDispatch, useSelector} from 'react-redux';
 import homeLogo from "../../Assets/home-main.svg";
-import Button from "react-bootstrap/Button";
+
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
@@ -14,23 +14,16 @@ function Home() {
   const dispatch = useDispatch()
   console.log(tema)
 
-  const handleTema = (e) => {
-    e.preventDefault()
-    if (tema === true) {
-      dispatch(temaCambio(false))
-    } else {
-      dispatch(temaCambio(true))
-    }
-  }
+  // const handleTema = (e) => {
+  //   e.preventDefault()
+  //   if (tema === true) {
+  //     dispatch(temaCambio(false))
+  //   } else {
+  //     dispatch(temaCambio(true))
+  //   }
+  // }
 
-  const handleIngles = (e) => {
-    e.preventDefault()
-    if (ingles === true) {
-      dispatch(traduccionIngles(false))
-    } else {
-      dispatch(traduccionIngles(true))
-    }
-  }
+  
 
 
 
@@ -62,9 +55,8 @@ function Home() {
           </Row>
         </Container>
       </Container>
-      <Button onClick={(e) => handleTema(e)}>Claro/Oscuro</Button>
-      <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></input>
-      <Button onClick={(e) => handleIngles(e)}>Ingles/Espanol</Button>
+      {/* <Button onClick={(e) => handleTema(e)}>Claro/Oscuro</Button> */}
+      
       <Home2 />
     </section>
   );

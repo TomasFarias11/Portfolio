@@ -5,11 +5,11 @@ import {
   DiJavascript1,
   DiReact,
   DiNodejs,
-  DiFirebase, // tienes que importar y usarlos como jsx
-  DiPython,
+  DiScrum, // tienes que importar y usarlos como jsx
   DiGit,
+  DiPostgresql,
 } from "react-icons/di";
-import { SiPytorch, SiTensorflow, SiFirebase } from "react-icons/si";
+import { SiBootstrap, SiHtml5, SiFirebase, SiVite, SiRedux, } from "react-icons/si";
 
 /**
  * https://react-icons.github.io/react-icons/search?q=fir 
@@ -21,9 +21,6 @@ function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <CgCPlusPlus />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
         <DiJavascript1 />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
@@ -33,22 +30,28 @@ function Techstack() {
         <DiReact />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiFirebase />
+        <SiVite />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
+        <SiRedux />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiPytorch />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiTensorflow />
+        <DiPostgresql />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiGit />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
+        <DiScrum />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
         <SiFirebase />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiHtml5 />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiBootstrap />
       </Col>
     </Row>
   );

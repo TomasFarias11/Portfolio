@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
 import { ImBlog } from "react-icons/im";
 import {useDispatch, useSelector} from 'react-redux';
+import {temaCambio, traduccionIngles} from "../actions/actionTheme.js"
 import {
   AiFillStar,
   AiOutlineHome,
@@ -21,6 +22,7 @@ function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
   const ingles = useSelector((state) => state.ingles)
+  const dispatch = useDispatch()
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -31,6 +33,16 @@ function NavBar() {
   }
 
   window.addEventListener("scroll", scrollHandler);
+
+
+  const handleIngles = () => {
+    // e.preventDefault()
+    if (ingles === true) {
+      dispatch(traduccionIngles(false))
+    } else {
+      dispatch(traduccionIngles(true))
+    }
+  }
 
   return (
     <Navbar
@@ -50,7 +62,6 @@ function NavBar() {
             updateExpanded(expand ? false : "expanded");
           }}
         >
-          <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></input>
           <span></span>
           <span></span>
           <span></span>
@@ -58,6 +69,10 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           
           <Nav className="ml-auto" defaultActiveKey="#home">
+            <div class="custom-control custom-switch" style={{ marginTop: "15px" }}>
+              <input type="checkbox" class="custom-control-input" id="customSwitches"  onChange={handleIngles}/>
+              <label class="custom-control-label" for="customSwitches" style={{color: "white" }}>Español - English</label>
+            </div>
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
@@ -108,15 +123,9 @@ function NavBar() {
             </Nav.Item> */}
 
             <Nav.Item className="fork-btn">
-              {/* <Button
-                href="https://github.com/soumyajit4419/Portfolio"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button> */}
             </Nav.Item>
+            {/* <Button data-toggle='button' onClick={(e) => handleIngles(e)}>Ingles/Espanol</Button> */}
+            
           </Nav>
         </Navbar.Collapse>
       </Container>
