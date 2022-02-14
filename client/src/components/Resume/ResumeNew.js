@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import pdf from "../../Assets/Tomas Alejandro Farias CV.pdf";
+import pdf from "../../Assets/Tomas Alejandro Farias DEV CV.pdf";
 import {useDispatch, useSelector} from 'react-redux';
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -26,7 +26,7 @@ function ResumeNew() {
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button variant="primary" href={pdf} target="_blank">
             <AiOutlineDownload />
-            &nbsp;{ingles ? 'Descargar CV' : 'Download CV'}
+            &nbsp;{ingles ? 'Download CV' : 'Descargar CV'}
           </Button>
         </Row>
 
@@ -39,7 +39,7 @@ function ResumeNew() {
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button variant="primary" href={pdf} target="_blank">
             <AiOutlineDownload />
-            &nbsp;{ingles ? 'Descargar CV' : 'Download CV'}
+            &nbsp;{ingles ? 'Download CV' : 'Descargar CV'}
           </Button>
         </Row>
       </Container>
