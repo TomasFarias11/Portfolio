@@ -85,6 +85,20 @@ html {
   font-size: 1.2rem !important;
 }
 
+.navbar_logo {
+  position: absolute; 
+  left: 25px; 
+  top: 13px;
+  color: #c770f0;
+  transition: 0.3s ease;
+  font-size: 2.5rem;
+  font-family: sans-serif;
+}
+
+.navbar_logo:hover {
+  transform: scale(1.1)
+}
+
 .navbar-toggler {
   padding: 0.25rem 1.5rem !important;
   position: relative !important;
