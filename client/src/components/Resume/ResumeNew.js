@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import pdf from "../../Assets/Tomas Alejandro Farias DEV CV.pdf";
+import pdf from "../../Assets/CV ESP Tomas Alejandro Farias - DEV.pdf"
+import pdfEng from "../../Assets/CV ENG Tomas Alejandro Farias - DEV.pdf"
 import {useDispatch, useSelector} from 'react-redux';
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -23,25 +24,53 @@ function ResumeNew() {
     <div>
       <Container fluid className="resume-section">
         <Particle />
-        <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button variant="primary" href={pdf} target="_blank">
-            <AiOutlineDownload />
-            &nbsp;{ingles ? 'Download CV' : 'Descargar CV'}
-          </Button>
-        </Row>
-
+        {
+          ingles ?
+          <Row style={{ justifyContent: "center", position: "relative" }}>
+            <Button variant="primary" href={pdfEng} target="_blank">
+              <AiOutlineDownload />
+              &nbsp;{ingles ? 'Download CV' : 'Descargar CV'}
+            </Button>
+          </Row>
+          :
+          <Row style={{ justifyContent: "center", position: "relative" }}>
+            <Button variant="primary" href={pdf} target="_blank">
+              <AiOutlineDownload />
+              &nbsp;{ingles ? 'Download CV' : 'Descargar CV'}
+            </Button>
+          </Row>
+        }
+        {
+          ingles ?
+          <Row className="resume">
+            <Document file={pdfEng}>
+              <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+            </Document>
+          </Row>
+          :
         <Row className="resume">
           <Document file={pdf}>
             <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
           </Document>
         </Row>
+        }
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button variant="primary" href={pdf} target="_blank">
-            <AiOutlineDownload />
-            &nbsp;{ingles ? 'Download CV' : 'Descargar CV'}
-          </Button>
-        </Row>
+        {
+          ingles ?
+          <Row style={{ justifyContent: "center", position: "relative" }}>
+            <Button variant="primary" href={pdfEng} target="_blank">
+              <AiOutlineDownload />
+              &nbsp;{ingles ? 'Download CV' : 'Descargar CV'}
+            </Button>
+          </Row>
+          :
+          <Row style={{ justifyContent: "center", position: "relative" }}>
+            <Button variant="primary" href={pdf} target="_blank">
+              <AiOutlineDownload />
+              &nbsp;{ingles ? 'Download CV' : 'Descargar CV'}
+            </Button>
+          </Row>
+        }
       </Container>
     </div>
   );
